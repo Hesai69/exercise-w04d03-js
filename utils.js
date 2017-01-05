@@ -31,11 +31,13 @@ var str = '/pets?cute=true&big=false';
 } */
 
 function parseURL(str) {
+  var queryObj = {};
+  var obj = {};
   var pathAndQuery = str.split('?');
   var path = pathAndQuery[0];
   var queryKeysValues = pathAndQuery[1].split('&');
-  var queryObj = {};
-  var obj = {};
+  var fragment;
+
 
   queryKeysValues.forEach(function(keyValPair) {
     var key = keyValPair.split('=')[0];
